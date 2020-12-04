@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0970699-b3e4-43c8-9f07-470ef0f0fbdd" name="Default Changelist" comment="prototype2">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/Dijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/MiddleDijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/MiddleDijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/MiddleStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/MiddleStation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
