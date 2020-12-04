@@ -41,16 +41,16 @@ public class resultInformation extends AppCompatActivity {
             String temp = "";
             for(int time : timeNode){
                 System.out.println(time);
-                temp += s.get(time).getName() + "\n" + "↓";
+                temp += s.get(time).getName() + "\n" + "↓"+ "\n";
             }
-            infor.setText("최단 시간: " + min + "\n" + temp);
+            infor.setText("\n"+"최단 시간: " + min + "\n\n" + temp);
         }else if(chargeNode != null){
             String temp = "";
             for(int charge : chargeNode){
                 System.out.println(charge);
-                temp += s.get(charge).getName() + "\n" + "↓";
+                temp += s.get(charge).getName() + "\n" + "↓"+ "\n";
             }
-            infor.setText("최소 비용: " + min + "\n" + temp);
+            infor.setText("\n"+"최소 비용: " + min + "\n\n" + temp);
         }
 
         Button back = findViewById(R.id.back);
