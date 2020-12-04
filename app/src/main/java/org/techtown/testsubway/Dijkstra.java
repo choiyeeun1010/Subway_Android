@@ -7,7 +7,7 @@ public class Dijkstra {
     static final int number = 111; //역의 개수
     int v[]; // 방문한 노드
     int d[]; //최단 거리
-
+// 테스트
     public Dijkstra() {
         v = new int[number];
         d = new int[number];
