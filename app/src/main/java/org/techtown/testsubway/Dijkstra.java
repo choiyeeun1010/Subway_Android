@@ -17,6 +17,8 @@ public class Dijkstra {
         }
     }
 
+    //테스트 주석
+    //아무거나 넣었음
     //가장 최소 거리를 가지는 정점 반환
     public int getSmallIndex() {
         int min = INF; //가장 적은 비용 초기화
