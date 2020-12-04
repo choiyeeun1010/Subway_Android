@@ -80,6 +80,7 @@ public class MiddleStation extends AppCompatActivity implements Serializable{
                     Toast.makeText(getApplicationContext(), "사용자들의 역을 선택해 주세요.", Toast.LENGTH_SHORT).show();
                 }else{
                     dj = new MiddleDijkstra();
+                    dj.init();
                     dj.start(StartStation.getNumber(), FinalStation.getNumber());
                     System.out.println("중간역 함수 호출");
                     int m = dj.getMiddle();

@@ -8,9 +8,9 @@ import java.util.Vector;
 public class MiddleDijkstra {
 
 
-    int n = 111; // 정점의 갯수
+    int n = 7; // 정점의 갯수
 
-    final static int INF = 30000; // 선이 없는 곳... 무지 큰수로 설정
+    final static int m = 30000; // 선이 없는 곳... 무지 큰수로 설정
     int data[][];	// 전체 지도 데이타
 
     boolean visit[]; // 방문지 확인
@@ -23,13 +23,19 @@ public class MiddleDijkstra {
     Vector<Integer> stackV;
     ArrayList<Integer> st;
     Dijkstra dj;
-    ArrayList<int[]> std;
+
     public void init() // 다익스트라(Dijkstra) 알고리즘/단일 점에 따라 최단거리
     {
-        dj = new Dijkstra();
-        std = new ArrayList<int[]>();
-        dj.distance1(std);
-        dj.distance2(std);
+        data = new int[][] { //노드 들간의 거리 값
+                {0, 3, 4, 2, m, m, m}, //a
+                {3, 0, 1, m, 5, m, m}, //b
+                {4, 1, 0, 1, 3, m, m}, //c
+                {2, m, 1, 0, 3, 3, m}, //d
+                {m, 5, 3, 3, 0, 4, 3}, //e
+                {m, m, m, 3, 4, 0, 2}, //f
+                {m, m, m, m, 3, 2, 0} //g
+        };
+        n = data.length;
 
         dis = new int[n];
         visit = new boolean[n];
@@ -37,6 +43,7 @@ public class MiddleDijkstra {
         stack = new int[n];
         stackV=new Vector<Integer>();
         st = new ArrayList<>();
+        dj = new Dijkstra();
     }
 
     public int theLeastDistance()
@@ -54,15 +61,13 @@ public class MiddleDijkstra {
         s=start;
         e=end;
 
-        init();
-
         int k=0;
         int min=0;
 
 
 
         for (int i = 0; i < n; i++) { /* 초기화 */
-            dis[i] = INF;
+            dis[i] = m;
             prev[i] = 0;
             visit[i] = false;
         }
@@ -70,7 +75,7 @@ public class MiddleDijkstra {
         dis[s] = 0; /* 시작점의 거리는 0 */
 
         for (int i = 0; i < n; i++) {
-            min = INF;
+            min = m;
             for (int j = 0; j < n; j++) { /* 정점의 수만큼 반복 */
                 if (visit[j] == false && dis[j] < min) { /* 확인하지 않고 거리가 짧은 정점을 찾음 */
                     k = j;
@@ -79,7 +84,7 @@ public class MiddleDijkstra {
             }
             visit[k] = true; /* 해당 정점 확인 체크 */
 
-            if (min == INF)break; /* 연결된 곳이 없으면 종료 */
+            if (min == m)break; /* 연결된 곳이 없으면 종료 */
 
             /****
              * I -> J 보다 I -> K -> J의
@@ -87,15 +92,14 @@ public class MiddleDijkstra {
              * 갱신
              ****/
             for (int j = 0; j < n; j++) {
-                if (dis[k] + std.get(k)[j] < dis[j]) {
-                    dis[j] = dis[k] + std.get(k)[j]; /* 최단거리 저장*/
+                if (dis[k] + data[k][j] < dis[j]) {
+                    dis[j] = dis[k] + data[k][j]; /* 최단거리 저장*/
                     prev[j] = k; /* J로 가기 위해서는 K를 거쳐야 함 */
                 }
             }
         }
         nowLeastDistance();   //콘솔에서 최단거리 출력
         inverseFind();			// 콘솔에서 최단 경로 출력
-//        return dis[e];		// 콘솔에서 최단 경로 출력
     }
 
     /**** 최단 거리 출력 ****/
