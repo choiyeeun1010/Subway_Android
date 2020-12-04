@@ -10,7 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0970699-b3e4-43c8-9f07-470ef0f0fbdd" name="Default Changelist" comment="prototype2">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/techtown/testsubway/Dijkstra.java" afterDir="false" />
+>>>>>>> parent of bb7218e... 다익스트라 수정
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,22 +66,22 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\frien\AndroidStudioProjects\TestSubway2\app\src\main\res\drawable" />
-    </key>
-    <key name="android.template.-1468596500">
-      <recent name="org.techtown.testsubway" />
-    </key>
     <key name="android.template.1852538333">
-      <recent name="org.techtown.testsubway" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.techtown.testsubway" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\82107\AndroidStudioProjects\Subway Prototype2\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\82108\AndroidStudioProjects\TestSubway2\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\82108\AndroidStudioProjects\TestSubway2\app\src\main\res\layout" />
+    </key>
+    <key name="android.template.-1468596500">
+      <recent name="org.techtown.testsubway" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.techtown.testsubway" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\frien\AndroidStudioProjects\TestSubway2\app\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunManager">
@@ -202,25 +206,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="637" y="303" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1606236597474" />
-    <state width="1491" height="135" key="GridCell.Tab.0.bottom" timestamp="1607064021690">
+    <state width="1491" height="151" key="GridCell.Tab.0.bottom" timestamp="1606302187004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="135" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607064021690" />
+    <state width="1491" height="151" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606302187004" />
     <state width="1058" height="279" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1604091151479" />
-    <state width="1491" height="135" key="GridCell.Tab.0.center" timestamp="1607064021690">
+    <state width="1491" height="151" key="GridCell.Tab.0.center" timestamp="1606302187003">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="135" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607064021690" />
+    <state width="1491" height="151" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606302187003" />
     <state width="1058" height="279" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1604091151478" />
-    <state width="1491" height="135" key="GridCell.Tab.0.left" timestamp="1607064021687">
+    <state width="1491" height="151" key="GridCell.Tab.0.left" timestamp="1606302187003">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="135" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607064021687" />
+    <state width="1491" height="151" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606302187003" />
     <state width="1058" height="279" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1604091151478" />
-    <state width="1491" height="135" key="GridCell.Tab.0.right" timestamp="1607064021690">
+    <state width="1491" height="151" key="GridCell.Tab.0.right" timestamp="1606302187004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="135" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607064021690" />
+    <state width="1491" height="151" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606302187004" />
     <state width="1058" height="279" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1604091151478" />
     <state x="555" y="38" key="SettingsEditor" timestamp="1607016773900">
       <screen x="0" y="0" width="1536" height="824" />
@@ -238,10 +242,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="697" y="100" width="746" height="624" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1607006084535" />
-    <state x="436" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1607057368857">
+    <state x="436" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1607056274418">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="436" y="234" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1607057368857" />
+    <state x="436" y="234" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1607056274418" />
     <state x="570" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606235674088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

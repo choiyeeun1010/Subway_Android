@@ -150,9 +150,6 @@ public class MainActivity extends AppCompatActivity {
         * 새로운 화면으로 전환되고 해당 화면엔 출발역과 도착역을 지니고 있는 목록들이 있고
         * 해당 목록 클릭 시 검색버튼 클릭시 동일한 역할을 수행하여 최단 정보들을
         * 검색버튼 클릭 시 보이는 화면과 동일한 화면을 보여줌줌        * */
-
-
-
         Button like = findViewById(R.id.like);
         like.setOnClickListener(new View.OnClickListener() {
             @Override

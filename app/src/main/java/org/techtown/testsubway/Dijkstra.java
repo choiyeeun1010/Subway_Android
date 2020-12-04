@@ -7,7 +7,11 @@ public class Dijkstra {
     static final int number = 111; //역의 개수
     int v[]; // 방문한 노드
     int d[]; //최단 거리
+<<<<<<< HEAD
 // 테스트
+=======
+
+>>>>>>> parent of bb7218e... 다익스트라 수정
     public Dijkstra() {
         v = new int[number];
         d = new int[number];
@@ -17,6 +21,14 @@ public class Dijkstra {
         }
     }
 
+<<<<<<< HEAD
+=======
+    //새로운 브랜치 seungsoo
+    //새롭게 만들었음
+
+    //테스트 주석
+    //아무거나 넣었음
+>>>>>>> parent of bb7218e... 다익스트라 수정
     //가장 최소 거리를 가지는 정점 반환
     public int getSmallIndex() {
         int min = INF; //가장 적은 비용 초기화
