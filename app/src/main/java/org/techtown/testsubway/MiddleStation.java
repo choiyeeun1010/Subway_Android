@@ -44,8 +44,8 @@ public class MiddleStation extends AppCompatActivity implements Serializable{
 
         Intent intent = getIntent();
         s = (ArrayList<Station>) intent.getSerializableExtra("station");
-       // ma = new MainActivjumity();
-       // ArrayList<Station> st = ma.getStation();
+        // ma = new MainActivjumity();
+        // ArrayList<Station> st = ma.getStation();
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
