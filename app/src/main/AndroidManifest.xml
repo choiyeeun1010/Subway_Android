@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".resultInformation"
-            android:label="               [정보]               "
+            android:label="                             [정보]               "
             android:theme="@style/Theme.AppCompat.Dialog">
         </activity>
         <activity

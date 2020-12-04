@@ -35,7 +35,7 @@ public class Result extends AppCompatActivity {
         name_f = findViewById(R.id.name_f);
         minDis = findViewById(R.id.minDis);
         minTime = findViewById(R.id.minTime);
-        minCharge = findViewById(R.id.minTime);
+        minCharge = findViewById(R.id.minCharge);
 
         // 뒤로가는 변수, 메소드
 
@@ -75,12 +75,32 @@ public class Result extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), resultInformation.class);
-                intent.putExtra("minDis", min);
+                intent.putExtra("min", min);
                 intent.putExtra("disNode", disNode);
-                intent.putExtra("timeNode", timeNode);
-                intent.putExtra("chargeNode", chargeNode);
 
                 startActivityForResult(intent, 123);
+            }
+        });
+
+        minTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), resultInformation.class);
+                intent.putExtra("min", min2);
+                intent.putExtra("timeNode", timeNode);
+                startActivityForResult(intent, 124);
+
+            }
+        });
+
+        minCharge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), resultInformation.class);
+                intent.putExtra("min", min3);
+                intent.putExtra("chargeNode", chargeNode);
+                startActivityForResult(intent, 125);
+
             }
         });
     }
