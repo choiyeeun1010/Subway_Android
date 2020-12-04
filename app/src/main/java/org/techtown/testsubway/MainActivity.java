@@ -101,15 +101,21 @@ public class MainActivity extends AppCompatActivity {
                     ds2 = new Dijkstra();
                     ds3 = new Dijkstra();
                     min = ds.dijkstra1(startNum, finalNum);
+                    ArrayList<Integer> disNode = ds.inverseFind();
                     min2 = ds2.dijkstra2(startNum, finalNum);
+                    ArrayList<Integer> timeNode = ds2.inverseFind();
                     min3 = ds3.dijkstra3(startNum, finalNum);
+                    ArrayList<Integer> chargeNode = ds3.inverseFind();
                     // 검색 결과  화면으로 전환
                     Intent intent = new Intent(getApplicationContext(), Result.class);
                     intent.putExtra("StartStation", StartStation);
                     intent.putExtra("FinalStation", FinalStation);
                     intent.putExtra("Distance", min);
+                    intent.putExtra("disNode", disNode);
                     intent.putExtra("Time", min2);
+                    intent.putExtra("timeNode", timeNode);
                     intent.putExtra("Charge", min3);
+                    intent.putExtra("chargeNode", chargeNode);
                     startActivityForResult(intent, 303);
                 }
             }
