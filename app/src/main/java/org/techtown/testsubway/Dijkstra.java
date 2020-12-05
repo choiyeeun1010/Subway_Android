@@ -6,21 +6,14 @@ import java.util.Vector;
 public class Dijkstra {
     static final int INF = 99999; //연결되지 않은 노드끼린 무한대의 값으로 표기
     int n = 111; // 정점의 갯수
-
-//    final static int m = 30000; // 선이 없는 곳... 무지 큰수로 설정
-//    int data[][];	// 전체 지도 데이타
-
     boolean visit[]; // 방문지 확인
     int dis[]; // 시작점 부터의 거리
     int prev[]; // 도착점 전의 정점 저장
-
     int s,e;  // 시작점과 끝점 저장
     int stack[]; // 시작점부터 끝점까지의 순서 저장
 
     Vector<Integer> stackV;
     ArrayList<Integer> st;
-//    Dijkstra dj;
-
     ArrayList<int[]> std;
 
     public void init1() // 다익스트라(Dijkstra) 알고리즘/단일 점에 따라 최단거리
@@ -35,13 +28,9 @@ public class Dijkstra {
         stack = new int[n];
         stackV=new Vector<Integer>();
         st = new ArrayList<>();
-//        dj = new Dijkstra();
     }
 
-    public int theLeastDistance()
-    {
-        return dis[e];
-    }
+    public int theLeastDistance() { return dis[e]; }
 
     public int dijkstra1(int start,int end)
     {
@@ -91,7 +80,6 @@ public class Dijkstra {
             }
         }
         nowLeastDistance();   //콘솔에서 최단거리 출력
-//        inverseFind();			// 콘솔에서 최단 경로 출력
         return dis[e];
     }
 
@@ -123,64 +111,6 @@ public class Dijkstra {
         System.out.printf("\n");
         return st;
     }
-//    static final int number = 111; //역의 개수
-//    int v[]; // 방문한 노드
-//    int d[]; //최단 거리
-//
-//    public Dijkstra() {
-//        v = new int[number];
-//        d = new int[number];
-//        for (int i = 0; i < number; i++) {
-//            v[i] = 0;
-//            d[i] = 0;
-//        }
-//    }
-//
-//    //새로운 브랜치 seungsoo
-//    //새롭게 만들었음
-//
-//    //테스트 주석
-//    //아무거나 넣었음
-//    //가장 최소 거리를 가지는 정점 반환
-//    public int getSmallIndex() {
-//        int min = INF; //가장 적은 비용 초기화
-//        int index = 0;
-//        for (int i = 0; i < number; i++) {
-//            //방문하지 않은 노드중에서 선별
-//            if (d[i] < min && v[i] == 0) {
-//                min = d[i];
-//                index = i;
-//            }
-//        }
-//        return index;
-//    }
-//
-//    //다익스트라 수행, 거리
-//    public int dijkstra1(int start, int f) {
-//        ArrayList<int[]> std = new ArrayList<int[]>();
-//        distance1(std);
-//        distance2(std);
-//        //시작 하는 노드 중심의 거리 데이터를 옮김
-//        for (int i = 0; i < number; i++) {
-//            d[i] = std.get(start)[i];
-//        }
-//        v[start] = 1; //시작점 노드는 방문 처리
-//        for (int i = 0; i < number; i++) { //시작점 노드 제외해서 number-1까지
-//            int current = getSmallIndex(); //가장 최소거리 정점의 index 반환
-//            v[current] = 1; //가장 최소거리를 가지는 정점들은 순차적으로 방문처리
-//            for (int j = 0; j < number; j++) {
-//                if (v[j] == 0 && std.get(current)[j] != INF) {
-//                    if (d[current] + std.get(current)[j] < d[j]) {
-//                        d[j] = d[current] + std.get(current)[j];
-//
-//                    }
-//                }
-//            }
-//        }
-//
-//
-//        return d[f];
-//    }
 
     public void distance1(ArrayList<int[]> std) {
         std.add(new int[] {  0, 500, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 400,   500, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,     INF, INF, INF, INF, INF, INF, INF,     INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF});
@@ -299,32 +229,6 @@ public class Dijkstra {
         std.add(new int[] {  INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,     INF, INF, INF, INF, INF, INF, INF,     INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 650, INF,    INF, 250, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF,    INF, INF, INF, 0});
     }
 
-    //다익스트라 수행, 시간
-//    public int dijkstra2(int start, int f) {
-//        ArrayList<int[]> st = new ArrayList<int[]>();
-//        time1(st);
-//        time2(st);
-//        //시작 하는 노드 중심의 거리 데이터를 옮김
-//        for (int i = 0; i < number; i++) {
-//            d[i] = st.get(start)[i];
-//        }
-//        v[start] = 1; //시작점 노드는 방문 처리
-//        for (int i = 0; i < number; i++) { //시작점 노드 제외해서 number-1까지
-//            int current = getSmallIndex(); //가장 최소거리 정점의 index 반환
-//            v[current] = 1; //가장 최소거리를 가지는 정점들은 순차적으로 방문처리
-//            for (int j = 0; j < number; j++) {
-//                if (v[j] == 0 && st.get(current)[j] != INF) {
-//                    if (d[current] + st.get(current)[j] < d[j]) {
-//                        d[j] = d[current] + st.get(current)[j];
-//
-//                    }
-//                }
-//            }
-//        }
-//
-//        return d[f];
-//    }
-
     public void init2() // 다익스트라(Dijkstra) 알고리즘/단일 점에 따라 최단거리
     {
         std = new ArrayList<int[]>();
@@ -338,8 +242,8 @@ public class Dijkstra {
         stack = new int[n];
         stackV=new Vector<Integer>();
         st = new ArrayList<>();
-//        dj = new Dijkstra();
     }
+
     public int dijkstra2(int start,int end)
     {
         System.out.println("==========================================================");
@@ -354,8 +258,6 @@ public class Dijkstra {
 
         int k=0;
         int min=0;
-
-
 
         for (int i = 0; i < n; i++) { /* 초기화 */
             dis[i] = INF;
@@ -390,7 +292,6 @@ public class Dijkstra {
             }
         }
         nowLeastDistance();   //콘솔에서 최단거리 출력
-//        inverseFind();			// 콘솔에서 최단 경로 출력
         return dis[e];
     }
 
@@ -468,7 +369,6 @@ public class Dijkstra {
         std.add(new int[]{INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 1호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 2호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, /* 3호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 150, 0, 1000, INF, /* 4호선 까지 */  INF, INF, INF, INF, INF, INF, INF,  /* 5호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 6호선 까지 */ INF, INF, INF, INF, INF, INF, INF, /* 7호선 까지 */ INF, INF, INF, INF, INF, INF,  /* 8호선 까지 */ INF, INF, INF, INF /* 9호선 까지 */});
         std.add(new int[]{INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 1호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 2호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, /* 3호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 1000, 0, 500, /* 4호선 까지 */  INF, INF, INF, INF, INF, INF, INF,  /* 5호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 6호선 까지 */ INF, INF, INF, INF, INF, 300, 430, /* 7호선 까지 */ INF, INF, INF, INF, INF, INF,  /* 8호선 까지 */ INF, INF, INF, INF /* 9호선 까지 */});
         std.add(new int[]{INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 1호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 900, INF, /* 2호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, /* 3호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 500, 0, /* 4호선 까지 */  INF, INF, INF, INF, INF, INF, INF,  /* 5호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 480, 320, INF, INF, INF, INF, INF, /* 6호선 까지 */ INF, INF, INF, INF, INF, INF, INF, /* 7호선 까지 */ INF, INF, INF, INF, INF, INF,  /* 8호선 까지 */ INF, INF, INF, INF /* 9호선 까지 */});
-
     }
 
     public void time2(ArrayList<int[]> std) {
@@ -530,34 +430,7 @@ public class Dijkstra {
         std.add(new int[]{INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 430, INF, INF, INF, INF, /* 1호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 2호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, /* 3호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 4호선 까지 */  INF, INF, INF, INF, INF, INF, INF,  /* 5호선 까지 */ INF, INF, INF, INF, 480, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 6호선 까지 */ INF, INF, INF, INF, INF, INF, INF, /* 7호선 까지 */ INF, INF, INF, INF, INF, INF,  /* 8호선 까지 */ INF, 0, INF, INF /* 9호선 까지 */});
         std.add(new int[]{INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 1000, INF, INF, INF, INF, /* 1호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 2호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, /* 3호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 4호선 까지 */  INF, INF, INF, INF, INF, INF, INF,  /* 5호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 6호선 까지 */ INF, 150, INF, INF, INF, INF, INF, /* 7호선 까지 */ INF, INF, INF, INF, INF, INF,  /* 8호선 까지 */ INF, INF, 0, INF /* 9호선 까지 */});
         std.add(new int[]{INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 1호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 2호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, /* 3호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, /* 4호선 까지 */  INF, INF, INF, INF, INF, INF, INF,  /* 5호선 까지 */ INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 250, INF, /* 6호선 까지 */ INF, 500, INF, INF, INF, INF, INF, /* 7호선 까지 */ INF, INF, INF, INF, INF, INF,  /* 8호선 까지 */ INF, INF, INF, 0 /* 9호선 까지 */});
-
     }
-
-    //다익스트라 수행, 거리
-//    public int dijkstra3(int start, int f) {
-//        ArrayList<int[]> stc = new ArrayList<int[]>();
-//        charge1(stc);
-//        charge2(stc);
-//        //시작 하는 노드 중심의 거리 데이터를 옮김
-//        for (int i = 0; i < number; i++) {
-//            d[i] = stc.get(start)[i];
-//        }
-//        v[start] = 1; //시작점 노드는 방문 처리
-//        for (int i = 0; i < number; i++) { //시작점 노드 제외해서 number-1까지
-//            int current = getSmallIndex(); //가장 최소거리 정점의 index 반환
-//            v[current] = 1; //가장 최소거리를 가지는 정점들은 순차적으로 방문처리
-//            for (int j = 0; j < number; j++) {
-//                if (v[j] == 0 && stc.get(current)[j] != INF) {
-//                    if (d[current] + stc.get(current)[j] < d[j]) {
-//                        d[j] = d[current] + stc.get(current)[j];
-//
-//                    }
-//                }
-//            }
-//        }
-//
-//        return d[f];
-//    }
 
     public void init3() // 다익스트라(Dijkstra) 알고리즘/단일 점에 따라 최단거리
     {
@@ -572,8 +445,8 @@ public class Dijkstra {
         stack = new int[n];
         stackV=new Vector<Integer>();
         st = new ArrayList<>();
-//        dj = new Dijkstra();
     }
+
     public int dijkstra3(int start,int end)
     {
         System.out.println("==========================================================");
@@ -588,8 +461,6 @@ public class Dijkstra {
 
         int k=0;
         int min=0;
-
-
 
         for (int i = 0; i < n; i++) { /* 초기화 */
             dis[i] = INF;
@@ -624,7 +495,6 @@ public class Dijkstra {
             }
         }
         nowLeastDistance();   //콘솔에서 최단거리 출력
-//        inverseFind();			// 콘솔에서 최단 경로 출력
         return dis[e];
     }
 

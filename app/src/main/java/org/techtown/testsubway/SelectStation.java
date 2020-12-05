@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +15,6 @@ public class SelectStation extends AppCompatActivity {
     String selected_item;
     MainActivity ma;
     ArrayList<Station> s;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +36,6 @@ public class SelectStation extends AppCompatActivity {
         //리스트뷰의 어댑터를 지정해준다.
         station_list.setAdapter(adapter);
 
-
         //리스트뷰의 아이템을 클릭시 해당 아이템의 문자열을 가져오기 위한 처리
         station_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -53,30 +49,13 @@ public class SelectStation extends AppCompatActivity {
                 intent.putExtra("player", st_item);
                 setResult(RESULT_OK, intent);
                 finish();
-
             }
         });
 
         for(int i=0; i<s.size(); i++){
             list.add(s.get(i).getName());
         }
-
-
-        //리스트뷰에 보여질 아이템을 추가
-        /*
-        list.add("a");
-        list.add("b");
-        list.add("c");
-        list.add("d");
-        list.add("e");
-        list.add("f");
-        list.add("g");
-
-         */
-
-
     }
-
     public String getSelected_item(){
         return selected_item;
     }

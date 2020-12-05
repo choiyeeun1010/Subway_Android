@@ -302,5 +302,4 @@ public class ImageDisplayView extends View implements View.OnTouchListener {
 
         redraw();
     }
-
 }

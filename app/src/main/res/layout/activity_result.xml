@@ -23,7 +23,7 @@
             android:background="@android:drawable/ic_menu_close_clear_cancel" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="320dp"
+            android:layout_width="310dp"
             android:layout_height="match_parent">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
