@@ -4,15 +4,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
+import android.view.View.OnTouchListener;
+
+import static android.view.View.*;
 
 public class Result extends AppCompatActivity {
+    String a, c;
+    int b, d;
+
 
     TextView name_s; // 출발역을 출력해주는 변수
     TextView name_f; // 도착역을 출력해주는 변수
@@ -20,9 +26,10 @@ public class Result extends AppCompatActivity {
     TextView time; // 시간을 출력해주는 변수
     TextView charge; // 값을 출력해주는 변수
     Button minDis, minTime, minCharge;
+    Button like;
     int min, min2, min3;
     ArrayList<Integer> disNode, timeNode, chargeNode;
-
+    ArrayList<Integer[]> likeNode = new ArrayList<Integer[]>();
     public static final String KEY_SIMPLE_DATA = "data";
 
     @Override
@@ -38,11 +45,10 @@ public class Result extends AppCompatActivity {
         minCharge = findViewById(R.id.minCharge);
 
         // 뒤로가는 변수, 메소드
-
         Intent intent = getIntent();
 
         Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -50,7 +56,6 @@ public class Result extends AppCompatActivity {
                 finish();
             }
         });
-
 
         TextView finals = findViewById(R.id.finals);
 
@@ -71,18 +76,37 @@ public class Result extends AppCompatActivity {
         name_f.setText(finalInfo.getName());
         finals.setText(finalInfo.getInfo());
 
-        minDis.setOnClickListener(new View.OnClickListener() {
+        // 즐겨찾기 리스트추가 수정중
+        a = name_s.getText().toString();
+        c = name_f.getText().toString();
+
+        b = Integer.parseInt(a);
+        d = Integer.parseInt(c);
+
+        like = findViewById(R.id.like);
+        like.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                like.setBackgroundResource(R.drawable.star1);
+                likeNode.add(new Integer[]{b, d});
+
+                System.out.println(likeNode.get(0)[0]);
+                System.out.println(likeNode.get(0)[1]);
+
+            }
+        });
+
+        minDis.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), resultInformation.class);
                 intent.putExtra("min", min);
                 intent.putExtra("disNode", disNode);
-
                 startActivityForResult(intent, 123);
             }
         });
 
-        minTime.setOnClickListener(new View.OnClickListener() {
+        minTime.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), resultInformation.class);
@@ -93,7 +117,7 @@ public class Result extends AppCompatActivity {
             }
         });
 
-        minCharge.setOnClickListener(new View.OnClickListener() {
+        minCharge.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), resultInformation.class);
