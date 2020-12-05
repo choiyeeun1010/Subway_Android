@@ -1,5 +1,7 @@
 package org.techtown.testsubway;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,8 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class like extends AppCompatActivity {
         List<String> list = new ArrayList<>();
 
         // 역들
-        final List<Station> StationList = ((MainActivity) MainActivity.context_main).getStation();
+        final List<Station> StationList = ((MainActivity)MainActivity.context_main).getStation();
 
         // 즐겨찾기한 역번호들
         final List<List<Integer>> favList = (List<List<Integer>>) MainActivity.fileManager.getCollection();
@@ -51,7 +51,7 @@ public class like extends AppCompatActivity {
                                     View view, int position, long id) {
                 System.out.println("클릭한 위치: "+position);
                 //클릭한 아이템의 문자열을 가져옴
-                selected_item = (List<Integer>)favList.get(position);
+                selected_item = (List<Integer>)favList.get(position)    ;
                 Dijkstra ds, ds2, ds3; //다익스트라 변수
                 int min = -1; //최단 시간 값
                 int min2 = -1;
