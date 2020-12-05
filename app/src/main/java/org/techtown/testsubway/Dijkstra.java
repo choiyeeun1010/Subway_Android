@@ -58,8 +58,6 @@ public class Dijkstra {
         int k=0;
         int min=0;
 
-
-
         for (int i = 0; i < n; i++) { /* 초기화 */
             dis[i] = INF;
             prev[i] = 0;
@@ -745,6 +743,5 @@ public class Dijkstra {
         std.add(new int[] { INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 800, INF, INF, INF, INF,  INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, 280, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF,    INF, 0, INF, INF});
         std.add(new int[] { INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 1000, INF, INF, INF, INF,  INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, 2000, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF,    INF, INF, 0, INF});
         std.add(new int[] { INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,  INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF,    INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, INF, 650, INF,   INF, 700, INF, INF, INF, INF, INF,   INF, INF, INF, INF, INF, INF,    INF, INF, INF, 0});
-
     }
 }

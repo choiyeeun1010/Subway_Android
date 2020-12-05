@@ -161,6 +161,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("즐겨찾기 클릭됨");
+                Intent intent = new Intent(getApplicationContext(), Like.class);
+                intent.putExtra("station", station);
+                startActivityForResult(intent, REQUEST_CODE_MENU);
             }
         });
 
