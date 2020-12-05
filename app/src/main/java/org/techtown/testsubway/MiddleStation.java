@@ -16,13 +16,15 @@ import java.util.ArrayList;
 
 public class MiddleStation extends AppCompatActivity implements Serializable{
 
-    MainActivity ma;
-    Station StartStation, FinalStation; //사용자1, 사용자2
-    Button st1b, st2b, search; //사용자1 선택, 사용자2 선택, 검색
-    TextView result, st1, st2, time, time2; //결과텍스트, 사용자1, 사용자2, 사용자1의 시간, 사용자 2의 시간, 지나치는 역들
-    String player1, player2; // 사용자 1, 사용자 2
-    MiddleDijkstra dj; //중간역다익스트라
-    ArrayList<Station> s;
+    private MainActivity ma;
+    private Station StartStation, FinalStation; //사용자1, 사용자2
+    private Button st1b, st2b, search; //사용자1 선택, 사용자2 선택, 검색
+    private TextView result, st1, st2, time, time2; //결과텍스트, 사용자1, 사용자2, 사용자1의 시간, 사용자 2의 시간, 지나치는 역들
+    private String player1, player2; // 사용자 1, 사용자 2
+    private MiddleDijkstra dj; //중간역다익스트라
+    private Dijkstra d; //다익스트라
+    private ArrayList<Station> s;
+    private int m; //중간역 index
     static final int REQUEST_CODE_MENU = 999;
     static final int REQUEST_CODE_MIDDLE_ONE = 888;
     static final int REQUEST_CODE_MIDDLE_TWO = 777;
@@ -82,7 +84,7 @@ public class MiddleStation extends AppCompatActivity implements Serializable{
                     dj = new MiddleDijkstra();
                     dj.start(StartStation.getNumber(), FinalStation.getNumber());
                     System.out.println("중간역 함수 호출");
-                    int m = dj.getMiddle();
+                    m = dj.getMiddle();
                     if(m == -2)
                         result.setText("오류");
                     else if(m == -1)
@@ -90,6 +92,13 @@ public class MiddleStation extends AppCompatActivity implements Serializable{
                     else {
                         result.setText("중간역은 : " + s.get(m).getName());
                     }
+
+                    d = new Dijkstra();
+                    int player1Time , player2Time;
+                    player1Time = d.dijkstra3(StartStation.getNumber(), m);
+                    player2Time = d.dijkstra3(FinalStation.getNumber(), m);
+                    time.setText(Integer.toString(player1Time));
+                    time2.setText(Integer.toString(player2Time));
                 }
             }
         });
