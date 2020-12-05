@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Result extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class Result extends AppCompatActivity {
     TextView distance; // 거리를 출력해주는 변수
     TextView time; // 시간을 출력해주는 변수
     TextView charge; // 값을 출력해주는 변수
-    Button minDis, minTime, minCharge;
+    Button minDis, minTime, minCharge, like;
     int min, min2, min3;
     ArrayList<Integer> disNode, timeNode, chargeNode;
 
@@ -55,14 +56,22 @@ public class Result extends AppCompatActivity {
 
         TextView finals = findViewById(R.id.finals);
 
-        Station startInfo = (Station) intent.getSerializableExtra("StartStation");
-        Station finalInfo = (Station) intent.getSerializableExtra("FinalStation");
+        final Station startInfo = (Station) intent.getSerializableExtra("StartStation");
+        final Station finalInfo = (Station) intent.getSerializableExtra("FinalStation");
         min = getIntent().getIntExtra("Distance",1);
         min2 = getIntent().getIntExtra("Time",2);
         min3 = getIntent().getIntExtra("Charge",3);
         disNode = getIntent().getIntegerArrayListExtra("disNode");
         timeNode = getIntent().getIntegerArrayListExtra("timeNode");
         chargeNode = getIntent().getIntegerArrayListExtra("chargeNode");
+
+        like = findViewById(R.id.like);
+        List<Integer> temp = new ArrayList<>();
+        temp.add(startInfo.getNumber());
+        temp.add(finalInfo.getNumber());
+        if(MainActivity.fileManager.contains(temp)){
+            like.setBackgroundResource(R.drawable.star1);
+        }
 
         String string1 = Integer.toString(min);
         String string2 = Integer.toString(min2);
@@ -102,6 +111,25 @@ public class Result extends AppCompatActivity {
                 intent.putExtra("chargeNode", chargeNode);
                 startActivityForResult(intent, 125);
 
+            }
+        });
+
+        Button fav = findViewById(R.id.like);
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("fav btn clicked");
+                List<Integer> temp = new ArrayList<>();
+                temp.add(startInfo.getNumber());
+                temp.add(finalInfo.getNumber());
+                if(MainActivity.fileManager.contains(temp)){
+                    MainActivity.fileManager.remove(temp);
+                    like.setBackgroundResource(R.drawable.star);
+                }else {
+                    MainActivity.fileManager.push(temp);
+                    MainActivity.fileManager.printList();
+                    like.setBackgroundResource(R.drawable.star1);
+                }
             }
         });
     }

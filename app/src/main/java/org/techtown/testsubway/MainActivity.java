@@ -36,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
     String user; //사용자가 입력한 문자를 저장할 변수
 
     public static Context context_main;
+    public static FileManager fileManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fileManager = new FileManager();
 
         context_main = this;
 
@@ -85,11 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //다익스트라 알고리즘을 수행하는 역할
         //검색 버튼 클릭 시 알고리즘을 수행하여 최단 값을 반환해주고 해당 값을 화면에 보여줌
-        /*
-        * 수정 필요 사항
-        * 1. 검색 버튼 클릭 시 아래에 정보가 뜨는게 아니라 새로운 화면으로 전환해서 떠야함
-        * 2. 전환된 화면에서 즐겨찾기에 추가할 수 있어야함(설정된 시작역과 도착역 정보를 주면 될듯)
-        * */
+
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,7 +159,10 @@ public class MainActivity extends AppCompatActivity {
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 System.out.println("즐겨찾기 클릭됨");
+                Intent intent = new Intent(getApplicationContext(), like.class);
+                startActivity(intent);
             }
         });
 
