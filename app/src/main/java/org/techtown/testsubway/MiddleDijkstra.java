@@ -7,16 +7,12 @@ import java.util.Vector;
 
 public class MiddleDijkstra {
 
-
     int n = 111; // 정점의 갯수
-
     final static int INF = 30000; // 선이 없는 곳... 무지 큰수로 설정
     int data[][];	// 전체 지도 데이타
-
     boolean visit[]; // 방문지 확인
     int dis[]; // 시작점 부터의 거리
     int prev[]; // 도착점 전의 정점 저장
-
     int s,e;  // 시작점과 끝점 저장
     int stack[]; // 시작점부터 끝점까지의 순서 저장
 
@@ -59,8 +55,6 @@ public class MiddleDijkstra {
         int k=0;
         int min=0;
 
-
-
         for (int i = 0; i < n; i++) { /* 초기화 */
             dis[i] = INF;
             prev[i] = 0;
@@ -95,7 +89,6 @@ public class MiddleDijkstra {
         }
         nowLeastDistance();   //콘솔에서 최단거리 출력
         inverseFind();			// 콘솔에서 최단 경로 출력
-//        return dis[e];		// 콘솔에서 최단 경로 출력
     }
 
     /**** 최단 거리 출력 ****/
@@ -197,8 +190,6 @@ public class MiddleDijkstra {
             e--;
 
         }
-
         return -2; //오류코드
-
     }
 }

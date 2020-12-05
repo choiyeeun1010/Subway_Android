@@ -2,7 +2,6 @@ package org.techtown.testsubway;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -16,7 +15,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -34,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
     int min2 = -1;
     int min3 = -1;
     String user; //사용자가 입력한 문자를 저장할 변수
-
     public static Context context_main;
+    public static FileManager fileManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fileManager = new FileManager();
 
         context_main = this;
 
@@ -83,13 +83,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 202);
             }
         });
+
         //다익스트라 알고리즘을 수행하는 역할
         //검색 버튼 클릭 시 알고리즘을 수행하여 최단 값을 반환해주고 해당 값을 화면에 보여줌
-        /*
-        * 수정 필요 사항
-        * 1. 검색 버튼 클릭 시 아래에 정보가 뜨는게 아니라 새로운 화면으로 전환해서 떠야함
-        * 2. 전환된 화면에서 즐겨찾기에 추가할 수 있어야함(설정된 시작역과 도착역 정보를 주면 될듯)
-        * */
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -152,15 +148,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        * 즐겨찾기 버튼 클릭 시
-        * 새로운 화면으로 전환되고 해당 화면엔 출발역과 도착역을 지니고 있는 목록들이 있고
-        * 해당 목록 클릭 시 검색버튼 클릭시 동일한 역할을 수행하여 최단 정보들을
-        * 검색버튼 클릭 시 보이는 화면과 동일한 화면을 보여줌줌        * */
+         * 즐겨찾기 버튼 클릭 시
+         * 새로운 화면으로 전환되고 해당 화면엔 출발역과 도착역을 지니고 있는 목록들이 있고
+         * 해당 목록 클릭 시 검색버튼 클릭시 동일한 역할을 수행하여 최단 정보들을
+         * 검색버튼 클릭 시 보이는 화면과 동일한 화면을 보여줌       * */
         Button like = findViewById(R.id.like);
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 System.out.println("즐겨찾기 클릭됨");
+                Intent intent = new Intent(getApplicationContext(), like.class);
+                startActivity(intent);
             }
         });
 

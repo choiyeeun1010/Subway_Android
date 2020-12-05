@@ -21,6 +21,7 @@
         <activity android:name=".SelectStation" />
         <activity android:name=".MiddleStation" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".like"/>
         <activity android:name=".Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

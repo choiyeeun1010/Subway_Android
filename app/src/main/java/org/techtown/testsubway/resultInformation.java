@@ -1,13 +1,11 @@
 package org.techtown.testsubway;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class resultInformation extends AppCompatActivity {
@@ -36,6 +34,7 @@ public class resultInformation extends AppCompatActivity {
                 System.out.println(dis);
                 temp += s.get(dis).getName() + "\n" + "↓" + "\n";
             }
+            temp += "도착" + "\n";
             infor.setText("\n" + "최단 거리: " + min + "\n\n" + temp);
         }else if(timeNode != null){
             String temp = "";
@@ -43,6 +42,7 @@ public class resultInformation extends AppCompatActivity {
                 System.out.println(time);
                 temp += s.get(time).getName() + "\n" + "↓"+ "\n";
             }
+            temp += "도착" + "\n";
             infor.setText("\n"+"최단 시간: " + min + "\n\n" + temp);
         }else if(chargeNode != null){
             String temp = "";
@@ -50,6 +50,7 @@ public class resultInformation extends AppCompatActivity {
                 System.out.println(charge);
                 temp += s.get(charge).getName() + "\n" + "↓"+ "\n";
             }
+            temp += "도착" + "\n";
             infor.setText("\n"+"최소 비용: " + min + "\n\n" + temp);
         }
 
@@ -62,6 +63,5 @@ public class resultInformation extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

@@ -30,7 +30,5 @@ public class Information extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 }
