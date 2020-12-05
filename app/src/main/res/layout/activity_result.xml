@@ -12,15 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="435dp"
         android:layout_weight="0.1"
-        android:background="#FFFFFF"
+        android:background="#9EFFFFFF"
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/ic_menu_close_clear_cancel" />
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/close" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="320dp"

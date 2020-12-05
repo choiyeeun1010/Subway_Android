@@ -7,15 +7,22 @@
     android:orientation="vertical"
     tools:context=".MiddleStation">
 
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:background="@android:drawable/ic_menu_close_clear_cancel"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#9298D1D8"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/close" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
@@ -118,7 +125,8 @@
         android:layout_marginStart="140dp"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="76dp"
-        android:text="사용자1의 역을 선택해 주세요."
+        android:hint="사용자1의 역을 선택해 주세요."
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -130,7 +138,8 @@
         android:layout_marginStart="140dp"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="136dp"
-        android:text="사용자2의 역을 선택해 주세요."
+        android:hint="사용자2의 역을 선택해 주세요."
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +42,7 @@ public class Result extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        Button button = findViewById(R.id.button);
+        ImageButton button = findViewById(R.id.back);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
