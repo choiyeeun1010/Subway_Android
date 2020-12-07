@@ -1,11 +1,16 @@
 package org.techtown.testsubway;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +40,10 @@ public class Result extends AppCompatActivity {
         minCharge = findViewById(R.id.minCharge);
 
         // 뒤로가는 변수, 메소드
+
         Intent intent = getIntent();
-        Button button = findViewById(R.id.button);
+
+        ImageButton button = findViewById(R.id.back);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +52,7 @@ public class Result extends AppCompatActivity {
                 finish();
             }
         });
+
 
         TextView finals = findViewById(R.id.finals);
 
@@ -79,6 +87,7 @@ public class Result extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), resultInformation.class);
                 intent.putExtra("min", min);
                 intent.putExtra("disNode", disNode);
+
                 startActivityForResult(intent, 123);
             }
         });
@@ -90,6 +99,7 @@ public class Result extends AppCompatActivity {
                 intent.putExtra("min", min2);
                 intent.putExtra("timeNode", timeNode);
                 startActivityForResult(intent, 124);
+
             }
         });
 
@@ -100,10 +110,10 @@ public class Result extends AppCompatActivity {
                 intent.putExtra("min", min3);
                 intent.putExtra("chargeNode", chargeNode);
                 startActivityForResult(intent, 125);
+
             }
         });
 
-        // 즐겨찾기 버튼 클릭시
         Button fav = findViewById(R.id.like);
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
