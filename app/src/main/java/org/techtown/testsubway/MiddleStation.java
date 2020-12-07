@@ -87,8 +87,10 @@ public class MiddleStation extends AppCompatActivity implements Serializable{
                     m = dj.getMiddle();
                     if(m == -2)
                         result.setText("오류");
-                    else if(m == -1)
+                    else if(m == -1) {
                         result.setText("현재 역에서 만나세요!");
+                        m = StartStation.getNumber();
+                    }
                     else {
                         result.setText("중간역은 : " + s.get(m).getName());
                     }
